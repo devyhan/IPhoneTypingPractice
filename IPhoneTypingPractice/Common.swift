@@ -10,4 +10,13 @@ import UIKit
 
 struct Common {
   // Make common Attribute
+  
+  static func defaultButton(for button: UIButton) {
+    
+  }
+  
+  static func defaultView(for view: UIView) {
+    
+  }
+    
 }

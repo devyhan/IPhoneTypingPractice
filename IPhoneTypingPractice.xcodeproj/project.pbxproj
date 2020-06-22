@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0ECDFD8724A0C16300A63399 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECDFD8624A0C16300A63399 /* CustomCell.swift */; };
 		7EFC6B4C24A0989A0079F272 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFC6B4B24A0989A0079F272 /* AppDelegate.swift */; };
 		7EFC6B4E24A0989A0079F272 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFC6B4D24A0989A0079F272 /* SceneDelegate.swift */; };
 		7EFC6B5024A0989A0079F272 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFC6B4F24A0989A0079F272 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0ECDFD8624A0C16300A63399 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		7EFC6B4824A0989A0079F272 /* IPhoneTypingPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IPhoneTypingPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EFC6B4B24A0989A0079F272 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EFC6B4D24A0989A0079F272 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				7EFC6B5F24A09AC90079F272 /* Common.swift */,
 				7EFC6B4D24A0989A0079F272 /* SceneDelegate.swift */,
 				7EFC6B4F24A0989A0079F272 /* ViewController.swift */,
+				0ECDFD8624A0C16300A63399 /* CustomCell.swift */,
 				7EFC6B5124A0989A0079F272 /* Main.storyboard */,
 				7EFC6B5424A0989B0079F272 /* Assets.xcassets */,
 				7EFC6B5624A0989B0079F272 /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 				7EFC6B5024A0989A0079F272 /* ViewController.swift in Sources */,
 				7EFC6B4C24A0989A0079F272 /* AppDelegate.swift in Sources */,
 				7EFC6B4E24A0989A0079F272 /* SceneDelegate.swift in Sources */,
+				0ECDFD8724A0C16300A63399 /* CustomCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
