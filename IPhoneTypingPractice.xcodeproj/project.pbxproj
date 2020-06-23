@@ -14,6 +14,8 @@
 		7EFC6B5524A0989B0079F272 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EFC6B5424A0989B0079F272 /* Assets.xcassets */; };
 		7EFC6B5824A0989B0079F272 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EFC6B5624A0989B0079F272 /* LaunchScreen.storyboard */; };
 		7EFC6B6024A09AC90079F272 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFC6B5F24A09AC90079F272 /* Common.swift */; };
+		7EFC6B6224A0C0740079F272 /* KRTypingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFC6B6124A0C0740079F272 /* KRTypingViewController.swift */; };
+		7EFC6B6424A1B1D80079F272 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFC6B6324A1B1D80079F272 /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		7EFC6B5724A0989B0079F272 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7EFC6B5924A0989B0079F272 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7EFC6B5F24A09AC90079F272 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		7EFC6B6124A0C0740079F272 /* KRTypingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KRTypingViewController.swift; sourceTree = "<group>"; };
+		7EFC6B6324A1B1D80079F272 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +46,7 @@
 		7EFC6B3F24A098990079F272 = {
 			isa = PBXGroup;
 			children = (
+				7EFC6B6324A1B1D80079F272 /* Data.swift */,
 				7EFC6B4A24A0989A0079F272 /* IPhoneTypingPractice */,
 				7EFC6B4924A0989A0079F272 /* Products */,
 			);
@@ -60,6 +65,7 @@
 			children = (
 				7EFC6B4B24A0989A0079F272 /* AppDelegate.swift */,
 				7EFC6B5F24A09AC90079F272 /* Common.swift */,
+				7EFC6B6124A0C0740079F272 /* KRTypingViewController.swift */,
 				7EFC6B4D24A0989A0079F272 /* SceneDelegate.swift */,
 				7EFC6B4F24A0989A0079F272 /* ViewController.swift */,
 				7EFC6B5124A0989A0079F272 /* Main.storyboard */,
@@ -142,7 +148,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EFC6B6024A09AC90079F272 /* Common.swift in Sources */,
+				7EFC6B6424A1B1D80079F272 /* Data.swift in Sources */,
 				7EFC6B5024A0989A0079F272 /* ViewController.swift in Sources */,
+				7EFC6B6224A0C0740079F272 /* KRTypingViewController.swift in Sources */,
 				7EFC6B4C24A0989A0079F272 /* AppDelegate.swift in Sources */,
 				7EFC6B4E24A0989A0079F272 /* SceneDelegate.swift in Sources */,
 			);

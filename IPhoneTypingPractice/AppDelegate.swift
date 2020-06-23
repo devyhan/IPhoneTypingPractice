@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     if #available(iOS 13.0, *) { }
     else {
       window = UIWindow(frame: UIScreen.main.bounds)
-      window?.rootViewController = ViewController()
+      window?.rootViewController = Common.navigtationViewController(scene: KRTypingViewController())
       window?.makeKeyAndVisible()
     }
     
