@@ -31,10 +31,10 @@ struct Common {
     addView.addSubview(uiView)
   }
   // UILabel
-  static func titleLabel(for uiLable: UILabel, title: String?, fontColor: UIColor,  textAlignment: NSTextAlignment?, where uiView: UIView) {
+  static func titleLabel(for uiLable: UILabel, title: String?, fontColor: UIColor, font: UIFont, textAlignment: NSTextAlignment?, where uiView: UIView) {
     uiLable.text = title ?? ""
     uiLable.textAlignment = textAlignment ?? .center
-    uiLable.font = UIFont.boldSystemFont(ofSize: contentsFontSize * 10)
+    uiLable.font = font
 
     uiView.addSubview(uiLable)
   }
@@ -47,12 +47,13 @@ struct Common {
     uiView.addSubview(uiLable)
   }
   // UITextField
-  static func defaultTextField(for uiTextField: UITextField, placeholder: String, textAlignment: NSTextAlignment, keyboardType: UIKeyboardType, where uiView: UIView) {
+  static func defaultTextField(for uiTextField: UITextField, placeholder: String, textAlignment: NSTextAlignment, keyboardType: UIKeyboardType, alpha: CGFloat, where uiView: UIView) {
     uiTextField.placeholder = placeholder
     uiTextField.textAlignment = textAlignment
     uiTextField.keyboardType = keyboardType
     uiTextField.font = UIFont.boldSystemFont(ofSize: contentsFontSize)
     uiTextField.textColor = .black
+    uiTextField.alpha = alpha
     
     uiView.addSubview(uiTextField)
   }
