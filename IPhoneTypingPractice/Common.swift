@@ -34,22 +34,16 @@ struct Common {
   static func titleLabel(for uiLable: UILabel, title: String?, fontColor: UIColor,  textAlignment: NSTextAlignment?, where uiView: UIView) {
     uiLable.text = title ?? ""
     uiLable.textAlignment = textAlignment ?? .center
-    
     uiLable.font = UIFont.boldSystemFont(ofSize: contentsFontSize * 10)
-    
-    
-    
+
     uiView.addSubview(uiLable)
   }
   // UILabel
   static func contantsLabel(for uiLable: UILabel, title: String?, fontColor: UIColor,  textAlignment: NSTextAlignment?, where uiView: UIView) {
     uiLable.text = title ?? ""
     uiLable.textAlignment = textAlignment ?? .center
-    
     uiLable.font = UIFont.boldSystemFont(ofSize: contentsFontSize)
-    
-    
-    
+  
     uiView.addSubview(uiLable)
   }
   // UITextField

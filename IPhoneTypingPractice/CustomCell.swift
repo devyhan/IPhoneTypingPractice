@@ -32,6 +32,7 @@ class CustomCell: UICollectionViewCell {
   }
   
   private func setupConstraints() {
+
     [titleLabel, img].forEach {
       $0.translatesAutoresizingMaskIntoConstraints = false
     }

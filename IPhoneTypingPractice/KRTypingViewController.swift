@@ -73,7 +73,6 @@ final class KRTypingViewController: UIViewController {
       .leading(equalTo: someView.leadingAnchor)
       .trailing(equalTo: someView.trailingAnchor)
     
-    
     uiChangeConstraint = someTextField.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
     uiChangeConstraint?.isActive = true
     
