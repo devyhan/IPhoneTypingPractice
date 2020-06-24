@@ -10,8 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
   
-  let gameImg = ["kor", "eng"]
-  let gameTitle = ["KOR Keyboard", "ENG Keyboard"]
+  let gameImg = ["flag", "uk"]
+  let gameTitle = ["KOR", "ENG"]
   
   let flowLayout = UICollectionViewFlowLayout()
   lazy var collectionView = UICollectionView(
@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     let outView = UIView()
     let gradientLayer = CAGradientLayer()
     gradientLayer.frame = view.frame
-    gradientLayer.colors = [UIColor.systemTeal.cgColor, UIColor.systemBlue.cgColor]
+    gradientLayer.colors = [UIColor(rgb:0xf1e7fe).cgColor, UIColor(rgb: 0xbe90d4).cgColor]
     gradientLayer.locations = [0, 1]
     collectionView.backgroundView = outView
     collectionView.backgroundView?.layer.addSublayer(gradientLayer)
@@ -48,9 +48,9 @@ class ViewController: UIViewController {
   }
   
   private func setupFlowLayout() {
-    let width = view.frame.width - 20
+    let width = view.frame.width - 60
     flowLayout.itemSize = CGSize(width: width, height: width)
-    flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    flowLayout.sectionInset = UIEdgeInsets(top:  40, left: 40, bottom: 40, right: 40)
   }
 }
 
@@ -76,10 +76,30 @@ extension ViewController: UICollectionViewDataSource {
 
 extension ViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    if gameImg[indexPath.item] == "kor" {
-      let vc = KRTypingViewController()
-      vc.modalPresentationStyle = .fullScreen
-      present(vc, animated: true)
+    let width = view.frame.width / 2
+    let img = UIImageView()
+    img.frame = CGRect(x: 0, y: 0, width: width, height: width)
+    img.center = view.center
+    if gameImg[indexPath.item] == "flag" {
+      img.image = UIImage(named: "flag")
+      view.addSubview(img)
+      UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
+        img.transform = CGAffineTransform(scaleX: 15, y: 15)
+      }) { (true) in
+        let vc = KRTypingViewController()
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true)
+      }
+    } else if gameImg[indexPath.item] == "uk" {
+      img.image = UIImage(named: "uk")
+      view.addSubview(img)
+      UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
+        img.transform = CGAffineTransform(scaleX: 15, y: 15)
+      }) { (true) in
+        let vc = ENTypingViewController()
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true)
+      }
     }
   }
 }

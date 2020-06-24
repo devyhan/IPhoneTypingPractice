@@ -43,13 +43,12 @@ final class KRTypingViewController: UIViewController {
       for: someView,
       where: view
     )
-    
+     
     Common.defaultTextField(
       for: someTextField,
       placeholder: "Touch Start",
       textAlignment: .center,
       keyboardType: .default,
-      alpha: 1,
       where: view
     )
     
@@ -67,14 +66,14 @@ final class KRTypingViewController: UIViewController {
       .leading()
       .trailing()
     
-    Common.titleLabel(for: countLabel, title: "3", fontColor: .black, font: UIFont.systemFont(ofSize: 100), textAlignment: .center, where: someView)
+    Common.titleLabel(for: countLabel, title: "3", fontColor: .black, textAlignment: .center, where: someView)
     countLabel.autoLayout
       .top(equalTo: someView.topAnchor, constant: Common.margin)
       .leading(equalTo: someView.leadingAnchor, constant: Common.margin)
       .trailing(equalTo: someView.trailingAnchor, constant: -Common.margin)
       .bottom(equalTo: someView.bottomAnchor, constant: -Common.margin)
     
-    Common.contantsLabel(for: contentsLabel, title: "none", fontColor: .black, textAlignment: .center, where: someView)
+    Common.contantsLabel(for: contentsLabel, title: "none", fontColor: .black, fontMultiplier: 1, textAlignment: .center, where: someView)
     contentsLabel.autoLayout
       .top(equalTo: someView.topAnchor, constant: -Common.margin * 2)
       .leading(equalTo: someView.leadingAnchor)

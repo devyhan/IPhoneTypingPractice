@@ -27,6 +27,7 @@ class CustomCell: UICollectionViewCell {
   }
   
   private func setupView() {
+    titleLabel.font = .boldSystemFont(ofSize: 40)
     layer.cornerRadius = 10
     [titleLabel, img].forEach { contentView.addSubview($0) }
   }
@@ -36,12 +37,12 @@ class CustomCell: UICollectionViewCell {
     [titleLabel, img].forEach {
       $0.translatesAutoresizingMaskIntoConstraints = false
     }
-    
+    let width = contentView.frame.width / 2
     NSLayoutConstraint.activate([
-      img.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 50),
-      img.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-      img.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-      img.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -70)
+      img.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+      img.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+      img.widthAnchor.constraint(equalToConstant: width),
+      img.heightAnchor.constraint(equalToConstant: width)
     ])
     
     NSLayoutConstraint.activate([

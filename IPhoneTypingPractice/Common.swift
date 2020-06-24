@@ -19,6 +19,14 @@ struct Common {
       let krTypingViewController = KRTypingViewController()
       let krVC = UINavigationController(rootViewController: krTypingViewController)
       return krVC
+    case is ENTypingViewController:
+      let enTypingViewController = ENTypingViewController()
+      let enVC = UINavigationController(rootViewController: enTypingViewController)
+      return enVC
+//    case is LaunchViewController:
+//      let launchViewController = LaunchViewController()
+//      let launchVC = UINavigationController(rootViewController: launchViewController)
+//      return launchVC
     default:
       let viewController = ViewController()
       let VC = UINavigationController(rootViewController: viewController)
@@ -28,36 +36,37 @@ struct Common {
   // UIView
   static func defaultView(for uiView: UIView, where addView: UIView) {
     uiView.backgroundColor = .white
+    
     addView.addSubview(uiView)
   }
   // UILabel
-  static func titleLabel(for uiLable: UILabel, title: String?, fontColor: UIColor, font: UIFont, textAlignment: NSTextAlignment?, where uiView: UIView) {
+  static func titleLabel(for uiLable: UILabel, title: String?, fontColor: UIColor,  textAlignment: NSTextAlignment?, where uiView: UIView) {
     uiLable.text = title ?? ""
     uiLable.textAlignment = textAlignment ?? .center
-    uiLable.font = font
+    uiLable.font = UIFont.boldSystemFont(ofSize: contentsFontSize * 10)
 
     uiView.addSubview(uiLable)
   }
   // UILabel
-  static func contantsLabel(for uiLable: UILabel, title: String?, fontColor: UIColor,  textAlignment: NSTextAlignment?, where uiView: UIView) {
+  static func contantsLabel(for uiLable: UILabel, title: String?, fontColor: UIColor, fontMultiplier: CGFloat,  textAlignment: NSTextAlignment?, where uiView: UIView) {
     uiLable.text = title ?? ""
     uiLable.textAlignment = textAlignment ?? .center
-    uiLable.font = UIFont.boldSystemFont(ofSize: contentsFontSize)
+    uiLable.font = UIFont.boldSystemFont(ofSize: contentsFontSize * fontMultiplier)
   
     uiView.addSubview(uiLable)
   }
   // UITextField
-  static func defaultTextField(for uiTextField: UITextField, placeholder: String, textAlignment: NSTextAlignment, keyboardType: UIKeyboardType, alpha: CGFloat, where uiView: UIView) {
+  static func defaultTextField(for uiTextField: UITextField, placeholder: String, textAlignment: NSTextAlignment, keyboardType: UIKeyboardType, where uiView: UIView) {
     uiTextField.placeholder = placeholder
     uiTextField.textAlignment = textAlignment
     uiTextField.keyboardType = keyboardType
     uiTextField.font = UIFont.boldSystemFont(ofSize: contentsFontSize)
     uiTextField.textColor = .black
-    uiTextField.alpha = alpha
-    
+    uiTextField.autocapitalizationType = .none
+
     uiView.addSubview(uiTextField)
   }
-  
+
 }
 
 extension UIView {
