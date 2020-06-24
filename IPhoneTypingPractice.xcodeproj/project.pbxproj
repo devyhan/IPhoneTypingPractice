@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E194CDE24A3854E00E41644 /* ENTypingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E194CDB24A3854E00E41644 /* ENTypingViewController.swift */; };
+		0E39696724A3693F007E1A2A /* 4052-smoothymon-typing.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E39696624A3693E007E1A2A /* 4052-smoothymon-typing.json */; };
+		0EC8B79E24A35DB700BBF344 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8B79D24A35DB700BBF344 /* LaunchViewController.swift */; };
 		0ECDFD8724A0C16300A63399 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECDFD8624A0C16300A63399 /* CustomCell.swift */; };
 		7EFC6B4C24A0989A0079F272 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFC6B4B24A0989A0079F272 /* AppDelegate.swift */; };
 		7EFC6B4E24A0989A0079F272 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFC6B4D24A0989A0079F272 /* SceneDelegate.swift */; };
@@ -17,10 +20,33 @@
 		7EFC6B6024A09AC90079F272 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFC6B5F24A09AC90079F272 /* Common.swift */; };
 		7EFC6B6224A0C0740079F272 /* KRTypingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFC6B6124A0C0740079F272 /* KRTypingViewController.swift */; };
 		7EFC6B6424A1B1D80079F272 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFC6B6324A1B1D80079F272 /* Data.swift */; };
+		DACE7D3416820AE105B636E1 /* Pods_IPhoneTypingPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4BD41E3CE0BC937AD9A55E5 /* Pods_IPhoneTypingPractice.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0E194CD224A36B1600E41644 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0E194CCD24A36B1600E41644 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 51BA97E8B5085EFFB47BC9C0B785CEA7;
+			remoteInfo = "lottie-ios";
+		};
+		0E194CD424A36B1600E41644 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0E194CCD24A36B1600E41644 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9902EBA26C37BCC271B2D0EFE4A459B1;
+			remoteInfo = "Pods-IPhoneTypingPractice";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		0E194CCD24A36B1600E41644 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
+		0E194CDB24A3854E00E41644 /* ENTypingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENTypingViewController.swift; sourceTree = "<group>"; };
+		0E39696624A3693E007E1A2A /* 4052-smoothymon-typing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "4052-smoothymon-typing.json"; sourceTree = "<group>"; };
+		0EC8B79D24A35DB700BBF344 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		0ECDFD8624A0C16300A63399 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		635D3BABEDFA6756A8D668C7 /* Pods-IPhoneTypingPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IPhoneTypingPractice.release.xcconfig"; path = "Target Support Files/Pods-IPhoneTypingPractice/Pods-IPhoneTypingPractice.release.xcconfig"; sourceTree = "<group>"; };
 		7EFC6B4824A0989A0079F272 /* IPhoneTypingPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IPhoneTypingPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EFC6B4B24A0989A0079F272 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EFC6B4D24A0989A0079F272 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +58,8 @@
 		7EFC6B5F24A09AC90079F272 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		7EFC6B6124A0C0740079F272 /* KRTypingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KRTypingViewController.swift; sourceTree = "<group>"; };
 		7EFC6B6324A1B1D80079F272 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		C5B6881FAC488E9C4CCB1E6D /* Pods-IPhoneTypingPractice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IPhoneTypingPractice.debug.xcconfig"; path = "Target Support Files/Pods-IPhoneTypingPractice/Pods-IPhoneTypingPractice.debug.xcconfig"; sourceTree = "<group>"; };
+		D4BD41E3CE0BC937AD9A55E5 /* Pods_IPhoneTypingPractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IPhoneTypingPractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +67,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DACE7D3416820AE105B636E1 /* Pods_IPhoneTypingPractice.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E194CCE24A36B1600E41644 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0E194CD324A36B1600E41644 /* Lottie.framework */,
+				0E194CD524A36B1600E41644 /* Pods_IPhoneTypingPractice.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		542676176AFC3BA132B61820 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C5B6881FAC488E9C4CCB1E6D /* Pods-IPhoneTypingPractice.debug.xcconfig */,
+				635D3BABEDFA6756A8D668C7 /* Pods-IPhoneTypingPractice.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7EFC6B3F24A098990079F272 = {
 			isa = PBXGroup;
 			children = (
 				7EFC6B4A24A0989A0079F272 /* IPhoneTypingPractice */,
 				7EFC6B4924A0989A0079F272 /* Products */,
+				542676176AFC3BA132B61820 /* Pods */,
+				E73A9B3FBE967B9B65F1DB3C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,9 +113,12 @@
 		7EFC6B4A24A0989A0079F272 /* IPhoneTypingPractice */ = {
 			isa = PBXGroup;
 			children = (
+				0E39696624A3693E007E1A2A /* 4052-smoothymon-typing.json */,
 				7EFC6B6324A1B1D80079F272 /* Data.swift */,
+				0EC8B79D24A35DB700BBF344 /* LaunchViewController.swift */,
 				7EFC6B4B24A0989A0079F272 /* AppDelegate.swift */,
 				7EFC6B5F24A09AC90079F272 /* Common.swift */,
+				0E194CDB24A3854E00E41644 /* ENTypingViewController.swift */,
 				7EFC6B6124A0C0740079F272 /* KRTypingViewController.swift */,
 				7EFC6B4D24A0989A0079F272 /* SceneDelegate.swift */,
 				7EFC6B4F24A0989A0079F272 /* ViewController.swift */,
@@ -79,6 +131,15 @@
 			path = IPhoneTypingPractice;
 			sourceTree = "<group>";
 		};
+		E73A9B3FBE967B9B65F1DB3C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0E194CCD24A36B1600E41644 /* Pods.xcodeproj */,
+				D4BD41E3CE0BC937AD9A55E5 /* Pods_IPhoneTypingPractice.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +147,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7EFC6B5C24A0989B0079F272 /* Build configuration list for PBXNativeTarget "IPhoneTypingPractice" */;
 			buildPhases = (
+				A2241B0AB4E10EF5104B87BF /* [CP] Check Pods Manifest.lock */,
 				7EFC6B4424A0989A0079F272 /* Sources */,
 				7EFC6B4524A0989A0079F272 /* Frameworks */,
 				7EFC6B4624A0989A0079F272 /* Resources */,
+				F530B246FFDE15C93CA433F1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,6 +188,12 @@
 			mainGroup = 7EFC6B3F24A098990079F272;
 			productRefGroup = 7EFC6B4924A0989A0079F272 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 0E194CCE24A36B1600E41644 /* Products */;
+					ProjectRef = 0E194CCD24A36B1600E41644 /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				7EFC6B4724A0989A0079F272 /* IPhoneTypingPractice */,
@@ -132,11 +201,29 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		0E194CD324A36B1600E41644 /* Lottie.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Lottie.framework;
+			remoteRef = 0E194CD224A36B1600E41644 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0E194CD524A36B1600E41644 /* Pods_IPhoneTypingPractice.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_IPhoneTypingPractice.framework;
+			remoteRef = 0E194CD424A36B1600E41644 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		7EFC6B4624A0989A0079F272 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E39696724A3693F007E1A2A /* 4052-smoothymon-typing.json in Resources */,
 				7EFC6B5824A0989B0079F272 /* LaunchScreen.storyboard in Resources */,
 				7EFC6B5524A0989B0079F272 /* Assets.xcassets in Resources */,
 				7EFC6B5324A0989A0079F272 /* Main.storyboard in Resources */,
@@ -144,6 +231,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A2241B0AB4E10EF5104B87BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IPhoneTypingPractice-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F530B246FFDE15C93CA433F1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IPhoneTypingPractice/Pods-IPhoneTypingPractice-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IPhoneTypingPractice/Pods-IPhoneTypingPractice-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IPhoneTypingPractice/Pods-IPhoneTypingPractice-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7EFC6B4424A0989A0079F272 /* Sources */ = {
@@ -153,10 +282,12 @@
 				7EFC6B6024A09AC90079F272 /* Common.swift in Sources */,
 				7EFC6B6424A1B1D80079F272 /* Data.swift in Sources */,
 				7EFC6B5024A0989A0079F272 /* ViewController.swift in Sources */,
+				0E194CDE24A3854E00E41644 /* ENTypingViewController.swift in Sources */,
 				7EFC6B6224A0C0740079F272 /* KRTypingViewController.swift in Sources */,
 				7EFC6B4C24A0989A0079F272 /* AppDelegate.swift in Sources */,
 				7EFC6B4E24A0989A0079F272 /* SceneDelegate.swift in Sources */,
 				0ECDFD8724A0C16300A63399 /* CustomCell.swift in Sources */,
+				0EC8B79E24A35DB700BBF344 /* LaunchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,17 +429,18 @@
 		};
 		7EFC6B5D24A0989B0079F272 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5B6881FAC488E9C4CCB1E6D /* Pods-IPhoneTypingPractice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X6LA4P7TFP;
+				DEVELOPMENT_TEAM = Q3HC733CNK;
 				INFOPLIST_FILE = IPhoneTypingPractice/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.devyhan93.IPhoneTypingPractice;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.shooooting.examples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -317,17 +449,18 @@
 		};
 		7EFC6B5E24A0989B0079F272 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 635D3BABEDFA6756A8D668C7 /* Pods-IPhoneTypingPractice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X6LA4P7TFP;
+				DEVELOPMENT_TEAM = Q3HC733CNK;
 				INFOPLIST_FILE = IPhoneTypingPractice/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.devyhan93.IPhoneTypingPractice;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.shooooting.examples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
