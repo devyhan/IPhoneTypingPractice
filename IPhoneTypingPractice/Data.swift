@@ -2008,4 +2008,10 @@ struct Word {
     "소설",
     "기록"
   ]
+  
+  static let emoji = [
+    "😀"
+    
+  ]
 }
+

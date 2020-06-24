@@ -20,7 +20,7 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    navigationController?.setNavigationBarHidden(true, animated: false)
     let outView = UIView()
     let gradientLayer = CAGradientLayer()
     gradientLayer.frame = view.frame
@@ -34,7 +34,7 @@ class ViewController: UIViewController {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-
+  
   }
   
   private func setupCollectionView() {
@@ -75,9 +75,13 @@ extension ViewController: UICollectionViewDataSource {
 }
 
 extension ViewController: UICollectionViewDelegate {
-//  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//    <#code#>
-//  }
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    if gameImg[indexPath.item] == "kor" {
+      let vc = KRTypingViewController()
+      vc.modalPresentationStyle = .fullScreen
+      present(vc, animated: true)
+    }
+  }
 }
 
 extension UIColor {

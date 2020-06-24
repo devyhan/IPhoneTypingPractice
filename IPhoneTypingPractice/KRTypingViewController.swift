@@ -22,10 +22,14 @@ final class KRTypingViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupUI()
+    
+    
+    
   }
   
   override func viewWillAppear(_ animated: Bool) {
-    //    self.someTextField.becomeFirstResponder()
+    //        self.someTextField.becomeFirstResponder()
+    view.reloadInputViews()
   }
   
   // MARK: - UI
@@ -39,6 +43,16 @@ final class KRTypingViewController: UIViewController {
       for: someView,
       where: view
     )
+    
+    Common.defaultTextField(
+      for: someTextField,
+      placeholder: "Touch Start",
+      textAlignment: .center,
+      keyboardType: .default,
+      alpha: 1,
+      where: view
+    )
+    
     // Layout
     someView
       .autoLayout
@@ -46,21 +60,14 @@ final class KRTypingViewController: UIViewController {
       .leading()
       .trailing()
     
-    // Attribute
-    Common.defaultTextField(
-      for: someTextField,
-      placeholder: "TextField",
-      textAlignment: .center,
-      keyboardType: .default,
-      where: view
-    )
     // Layout
-    someTextField.autoLayout
+    someTextField
+      .autoLayout
       .top(equalTo: someView.bottomAnchor, constant: Common.margin)
       .leading()
       .trailing()
     
-    Common.titleLabel(for: countLabel, title: "3", fontColor: .black, textAlignment: .center, where: someView)
+    Common.titleLabel(for: countLabel, title: "3", fontColor: .black, font: UIFont.systemFont(ofSize: 100), textAlignment: .center, where: someView)
     countLabel.autoLayout
       .top(equalTo: someView.topAnchor, constant: Common.margin)
       .leading(equalTo: someView.leadingAnchor, constant: Common.margin)
@@ -78,23 +85,29 @@ final class KRTypingViewController: UIViewController {
     
     setKeyboardEvent()
     
+    someTextField.delegate = self
+    
   }
   
   // MARK: - Action
   
   @objc func keyboardWillAppear(_ sender: NotificationCenter) {
-    uiChangeConstraint?.constant = -270
-    print("시작")
-    timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(setTimer), userInfo: nil, repeats: true)
+    someTextField.placeholder = "위 단어를 적으세요."
+    uiChangeConstraint?.constant = -310
+    
+    let korWordData = Word.korWord[0...].randomElement()
+    countLabel.text = korWordData
   }
   
   @objc func keyboardWillDisappear(_ sender: NotificationCenter) {
+    someTextField.placeholder = "Touch Start"
     uiChangeConstraint?.constant = 0
+    countLabel.text = ""
+    
   }
   
   @objc func setTimer() {
-    
-    
+
   } // end setTimer
   
 }
@@ -104,8 +117,46 @@ extension KRTypingViewController: UITextFieldDelegate {
     self.view.endEditing(true)
   }
   
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    if textField.text == countLabel.text {
+      
+      let korWordData = Word.korWord[0...].randomElement()
+      countLabel.text = korWordData
+      countLabel.textColor = .black
+      someTextField.text = ""
+    } else if textField.text != countLabel.text {
+      countLabel.textColor = .red
+      shakeAnimation()
+    }
+    return true
+  }
+  
+  private func shakeAnimation() {
+    UIView.animateKeyframes(withDuration: 0.25, delay: 0, animations: {
+      UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.2, animations: {
+        self.countLabel.center.x -= 8
+        self.someTextField.center.x -= 8
+      })
+      UIView.addKeyframe(withRelativeStartTime: 0.2, relativeDuration: 0.3, animations: {
+        self.countLabel.center.x += 16
+        self.someTextField.center.x += 16
+      })
+      UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.3, animations: {
+        self.countLabel.center.x -= 16
+        self.someTextField.center.x -= 16
+
+      })
+      UIView.addKeyframe(withRelativeStartTime: 0.8, relativeDuration: 0.2, animations: {
+        self.countLabel.center.x += 8
+        self.someTextField.center.x += 8
+
+      })
+    })
+  }
+  
   func setKeyboardEvent() {
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
   }
 }
+
