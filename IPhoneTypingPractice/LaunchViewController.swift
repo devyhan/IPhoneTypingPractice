@@ -28,9 +28,7 @@ class LaunchViewController: UIViewController {
       animationView.center = view.center
       
       animationView.play{ (finish) in
-        let vc = ViewController()
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true)
+        self.dismiss(animated: true)
         
       }
 //        setUI()

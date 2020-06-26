@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,7 +12,6 @@
 		0EC8B79E24A35DB700BBF344 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8B79D24A35DB700BBF344 /* LaunchViewController.swift */; };
 		0ECDFD8724A0C16300A63399 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECDFD8624A0C16300A63399 /* CustomCell.swift */; };
 		7EFC6B4C24A0989A0079F272 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFC6B4B24A0989A0079F272 /* AppDelegate.swift */; };
-		7EFC6B4E24A0989A0079F272 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFC6B4D24A0989A0079F272 /* SceneDelegate.swift */; };
 		7EFC6B5024A0989A0079F272 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFC6B4F24A0989A0079F272 /* ViewController.swift */; };
 		7EFC6B5324A0989A0079F272 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EFC6B5124A0989A0079F272 /* Main.storyboard */; };
 		7EFC6B5524A0989B0079F272 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EFC6B5424A0989B0079F272 /* Assets.xcassets */; };
@@ -20,7 +19,7 @@
 		7EFC6B6024A09AC90079F272 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFC6B5F24A09AC90079F272 /* Common.swift */; };
 		7EFC6B6224A0C0740079F272 /* KRTypingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFC6B6124A0C0740079F272 /* KRTypingViewController.swift */; };
 		7EFC6B6424A1B1D80079F272 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFC6B6324A1B1D80079F272 /* Data.swift */; };
-		DACE7D3416820AE105B636E1 /* Pods_IPhoneTypingPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4BD41E3CE0BC937AD9A55E5 /* Pods_IPhoneTypingPractice.framework */; };
+		ACC5F32E3191191326931E32 /* libPods-IPhoneTypingPractice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C491761308DDADCD11731E5F /* libPods-IPhoneTypingPractice.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +48,6 @@
 		635D3BABEDFA6756A8D668C7 /* Pods-IPhoneTypingPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IPhoneTypingPractice.release.xcconfig"; path = "Target Support Files/Pods-IPhoneTypingPractice/Pods-IPhoneTypingPractice.release.xcconfig"; sourceTree = "<group>"; };
 		7EFC6B4824A0989A0079F272 /* IPhoneTypingPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IPhoneTypingPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EFC6B4B24A0989A0079F272 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7EFC6B4D24A0989A0079F272 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7EFC6B4F24A0989A0079F272 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7EFC6B5224A0989A0079F272 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7EFC6B5424A0989B0079F272 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,8 +56,8 @@
 		7EFC6B5F24A09AC90079F272 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		7EFC6B6124A0C0740079F272 /* KRTypingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KRTypingViewController.swift; sourceTree = "<group>"; };
 		7EFC6B6324A1B1D80079F272 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		C491761308DDADCD11731E5F /* libPods-IPhoneTypingPractice.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IPhoneTypingPractice.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B6881FAC488E9C4CCB1E6D /* Pods-IPhoneTypingPractice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IPhoneTypingPractice.debug.xcconfig"; path = "Target Support Files/Pods-IPhoneTypingPractice/Pods-IPhoneTypingPractice.debug.xcconfig"; sourceTree = "<group>"; };
-		D4BD41E3CE0BC937AD9A55E5 /* Pods_IPhoneTypingPractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IPhoneTypingPractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DACE7D3416820AE105B636E1 /* Pods_IPhoneTypingPractice.framework in Frameworks */,
+				ACC5F32E3191191326931E32 /* libPods-IPhoneTypingPractice.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,8 +75,8 @@
 		0E194CCE24A36B1600E41644 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0E194CD324A36B1600E41644 /* Lottie.framework */,
-				0E194CD524A36B1600E41644 /* Pods_IPhoneTypingPractice.framework */,
+				0E194CD324A36B1600E41644 /* liblottie-ios.a */,
+				0E194CD524A36B1600E41644 /* libPods-IPhoneTypingPractice.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,10 +116,9 @@
 				0EC8B79D24A35DB700BBF344 /* LaunchViewController.swift */,
 				7EFC6B4B24A0989A0079F272 /* AppDelegate.swift */,
 				7EFC6B5F24A09AC90079F272 /* Common.swift */,
-				0E194CDB24A3854E00E41644 /* ENTypingViewController.swift */,
-				7EFC6B6124A0C0740079F272 /* KRTypingViewController.swift */,
-				7EFC6B4D24A0989A0079F272 /* SceneDelegate.swift */,
 				7EFC6B4F24A0989A0079F272 /* ViewController.swift */,
+				7EFC6B6124A0C0740079F272 /* KRTypingViewController.swift */,
+				0E194CDB24A3854E00E41644 /* ENTypingViewController.swift */,
 				0ECDFD8624A0C16300A63399 /* CustomCell.swift */,
 				7EFC6B5124A0989A0079F272 /* Main.storyboard */,
 				7EFC6B5424A0989B0079F272 /* Assets.xcassets */,
@@ -135,7 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				0E194CCD24A36B1600E41644 /* Pods.xcodeproj */,
-				D4BD41E3CE0BC937AD9A55E5 /* Pods_IPhoneTypingPractice.framework */,
+				C491761308DDADCD11731E5F /* libPods-IPhoneTypingPractice.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -151,7 +148,6 @@
 				7EFC6B4424A0989A0079F272 /* Sources */,
 				7EFC6B4524A0989A0079F272 /* Frameworks */,
 				7EFC6B4624A0989A0079F272 /* Resources */,
-				F530B246FFDE15C93CA433F1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -202,17 +198,17 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		0E194CD324A36B1600E41644 /* Lottie.framework */ = {
+		0E194CD324A36B1600E41644 /* liblottie-ios.a */ = {
 			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Lottie.framework;
+			fileType = archive.ar;
+			path = "liblottie-ios.a";
 			remoteRef = 0E194CD224A36B1600E41644 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		0E194CD524A36B1600E41644 /* Pods_IPhoneTypingPractice.framework */ = {
+		0E194CD524A36B1600E41644 /* libPods-IPhoneTypingPractice.a */ = {
 			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Pods_IPhoneTypingPractice.framework;
+			fileType = archive.ar;
+			path = "libPods-IPhoneTypingPractice.a";
 			remoteRef = 0E194CD424A36B1600E41644 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -255,23 +251,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F530B246FFDE15C93CA433F1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-IPhoneTypingPractice/Pods-IPhoneTypingPractice-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-IPhoneTypingPractice/Pods-IPhoneTypingPractice-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IPhoneTypingPractice/Pods-IPhoneTypingPractice-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -285,7 +264,6 @@
 				0E194CDE24A3854E00E41644 /* ENTypingViewController.swift in Sources */,
 				7EFC6B6224A0C0740079F272 /* KRTypingViewController.swift in Sources */,
 				7EFC6B4C24A0989A0079F272 /* AppDelegate.swift in Sources */,
-				7EFC6B4E24A0989A0079F272 /* SceneDelegate.swift in Sources */,
 				0ECDFD8724A0C16300A63399 /* CustomCell.swift in Sources */,
 				0EC8B79E24A35DB700BBF344 /* LaunchViewController.swift in Sources */,
 			);
@@ -435,7 +413,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q3HC733CNK;
 				INFOPLIST_FILE = IPhoneTypingPractice/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,7 +433,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q3HC733CNK;
 				INFOPLIST_FILE = IPhoneTypingPractice/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

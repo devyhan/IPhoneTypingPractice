@@ -10,9 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
   
-  let gameImg = ["flag", "uk"]
-  let gameTitle = ["KOR", "ENG"]
-  
+  let gameImg = ["flag", "uk", "face"]
+  let gameTitle = ["KOR", "ENG", "EMO"]
+  var okay = false
+    
   let flowLayout = UICollectionViewFlowLayout()
   lazy var collectionView = UICollectionView(
     frame: view.frame, collectionViewLayout: flowLayout
@@ -20,7 +21,13 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    navigationController?.setNavigationBarHidden(true, animated: false)
+    let vc = LaunchViewController()
+    vc.modalPresentationStyle = .fullScreen
+    present(vc, animated: false)
+    print(okay)
+    
+      navigationController?.setNavigationBarHidden(true, animated: false)
+    
     let outView = UIView()
     let gradientLayer = CAGradientLayer()
     gradientLayer.frame = view.frame
@@ -28,13 +35,10 @@ class ViewController: UIViewController {
     gradientLayer.locations = [0, 1]
     collectionView.backgroundView = outView
     collectionView.backgroundView?.layer.addSublayer(gradientLayer)
+    collectionView.isScrollEnabled = false
+    Common.toggle = true
     
     setupCollectionView()
-  }
-
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-  
   }
   
   private func setupCollectionView() {
@@ -44,13 +48,13 @@ class ViewController: UIViewController {
     collectionView.delegate = self
     collectionView.register(CustomCell.self, forCellWithReuseIdentifier: CustomCell.identifier)
      view.addSubview(collectionView)
-    
   }
   
   private func setupFlowLayout() {
-    let width = view.frame.width - 60
-    flowLayout.itemSize = CGSize(width: width, height: width)
-    flowLayout.sectionInset = UIEdgeInsets(top:  40, left: 40, bottom: 40, right: 40)
+    let width = view.frame.width - 20
+    let height = view.frame.height / 3 - 35
+    flowLayout.itemSize = CGSize(width: width, height: height)
+    flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
   }
 }
 
@@ -86,9 +90,10 @@ extension ViewController: UICollectionViewDelegate {
       UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
         img.transform = CGAffineTransform(scaleX: 15, y: 15)
       }) { (true) in
-        let vc = KRTypingViewController()
-        vc.modalPresentationStyle = .overFullScreen
+        let vc = Common.navigtationViewController(scene: KRTypingViewController())
+        vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true)
+        img.isHidden = true
       }
     } else if gameImg[indexPath.item] == "uk" {
       img.image = UIImage(named: "uk")
@@ -96,9 +101,21 @@ extension ViewController: UICollectionViewDelegate {
       UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
         img.transform = CGAffineTransform(scaleX: 15, y: 15)
       }) { (true) in
-        let vc = ENTypingViewController()
+        let vc = Common.navigtationViewController(scene: ENTypingViewController())
         vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: true)
+        img.isHidden = true
+      }
+    } else if gameImg[indexPath.item] == "face" {
+      img.image = UIImage(named: "face")
+      view.addSubview(img)
+      UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
+        img.transform = CGAffineTransform(scaleX: 15, y: 15)
+      }) { (true) in
+        let vc = Common.navigtationViewController(scene: ENTypingViewController())
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true)
+        img.isHidden = true
       }
     }
   }
