@@ -9,21 +9,24 @@
 import UIKit
 
 class ENTypingViewController: UIViewController {
-  private let someView = UIView()
-  private let someTextField = UITextField()
-  private var uiChangeConstraint: NSLayoutConstraint?
-  private var timer: Timer?
-  private let countLabel = UILabel()
-  private let contentsLabel = UILabel()
-  private let startAnimationLabel = UILabel()
+  private let contentsWrapView = UIView()
+  private let wordTextField = UITextField()
+  private let startCountLabel = UILabel()
   private let limitLabel = UILabel()
+  private let limitCountLabel = UILabel()
+  private let startAnimationLabel = UILabel()
+  
   private let wordQuestion = UILabel()
- 
+  
+  private var timer: Timer?
+  private var uiChangeConstraint: NSLayoutConstraint?
+  
+  private var score = 0
   
   var count = 4 {
-    didSet { countLabel.text = "\(count)" }
+    didSet { startCountLabel.text = "\(count)" }
   }
-  var counter = 63
+  var counter = 33
   
   lazy var leftButton: UIBarButtonItem = {
     let button = UIBarButtonItem(
@@ -43,7 +46,7 @@ class ENTypingViewController: UIViewController {
   }
   
   override func viewWillAppear(_ animated: Bool) {
-    someTextField.text = ""
+    wordTextField.text = ""
     wordQuestion.isHidden = true
   }
   
@@ -52,9 +55,9 @@ class ENTypingViewController: UIViewController {
     
     timer?.invalidate()
     timer = nil
-    counter = 63
-    contentsLabel.text = "60"
-    someTextField.text = ""
+    counter = 33
+    limitCountLabel.text = "30"
+    wordTextField.text = ""
     wordQuestion.isHidden = true
     self.view.endEditing(true)
   }
@@ -70,11 +73,14 @@ class ENTypingViewController: UIViewController {
     
     // Attribute
     Common.defaultView(
-      for: someView,
+      for: contentsWrapView,
       where: view
     )
     // Layout
-    someView.autoLayout.top().leading().trailing()
+    contentsWrapView.autoLayout
+      .top()
+      .leading()
+      .trailing()
     
     // Attribute
     Common.contantsLabel(
@@ -83,57 +89,56 @@ class ENTypingViewController: UIViewController {
       fontColor: .black,
       fontMultiplier: 1,
       textAlignment: .center,
-      where: someView
+      where: contentsWrapView
     )
     // Layout
     limitLabel.autoLayout
       .top()
       .leading()
       .trailing()
-  
     
     // Attribute
     Common.contantsLabel(
-      for: contentsLabel,
-      title: "60",
+      for: limitCountLabel,
+      title: "30",
       fontColor: .black,
       fontMultiplier: 1,
       textAlignment: .center,
-      where: someView
+      where: contentsWrapView
     )
     // Layout
-    contentsLabel.autoLayout
+    limitCountLabel.autoLayout
       .top(equalTo: limitLabel.bottomAnchor)
       .leading()
       .trailing()
     
     // Attribute
     Common.defaultTextField(
-      for: someTextField,
-      placeholder: "TextField",
+      for: wordTextField,
+      placeholder: "시작하려면 이곳을 눌러주세요",
       textAlignment: .center,
       keyboardType: .default,
       where: view
     )
-    someTextField.autocorrectionType = .yes
+    wordTextField.autocorrectionType = .yes
     // Layout
-    someTextField.autoLayout
-      .top(equalTo: someView.bottomAnchor, constant: Common.margin)
+    wordTextField.autoLayout
+      .top(equalTo: contentsWrapView.bottomAnchor, constant: Common.margin)
       .leading()
       .trailing()
     
     // Attribute
     Common.titleLabel(
-      for: countLabel,
+      for: startCountLabel,
       title: "3",
       fontColor: .black,
       textAlignment: .center,
-      where: someView
+      where: contentsWrapView
     )
-    countLabel.isHidden = true
+    startCountLabel.isHidden = true
     // Layout
-    countLabel.autoLayout
-      .top(equalTo: contentsLabel.bottomAnchor)
+    startCountLabel.autoLayout
+      .top(equalTo: limitCountLabel.bottomAnchor)
       .leading()
       .trailing()
       .bottom()
@@ -145,7 +150,7 @@ class ENTypingViewController: UIViewController {
       fontColor: .black,
       fontMultiplier: 3,
       textAlignment: .center,
-      where: someView
+      where: contentsWrapView
     )
     // Layout
     wordQuestion.autoLayout
@@ -153,17 +158,17 @@ class ENTypingViewController: UIViewController {
       .leading()
       .trailing()
     
-    uiChangeConstraint = someTextField.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
+    uiChangeConstraint = wordTextField.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
     uiChangeConstraint?.isActive = true
     
     setKeyboardEvent()
-    someTextField.delegate = self
-
+    wordTextField.delegate = self
+    
   }
   
   func countDown() {
     UIView.transition(
-      with: self.countLabel,
+      with: self.startCountLabel,
       duration: 0.5, // 전환 애니메이션 지속 시간
       options: [.transitionCrossDissolve],
       animations: {
@@ -174,7 +179,7 @@ class ENTypingViewController: UIViewController {
         guard self.count == 1 else {
           return self.countDown()
         }
-        self.countLabel.isHidden = true
+        self.startCountLabel.isHidden = true
         let enWordData = Word.engWord[0...].randomElement()
         self.wordQuestion.isHidden = false
         self.wordQuestion.text = enWordData
@@ -186,34 +191,52 @@ class ENTypingViewController: UIViewController {
   // MARK: - Action
   
   @objc func keyboardWillAppear(_ sender: NotificationCenter) {
+    wordTextField.placeholder = "위 단어를 적으세요."
     uiChangeConstraint?.constant = -300
     print("시작")
-    
-//    self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.setTimer), userInfo: nil, repeats: true)
-//
-//    self.countLabel.isHidden = false
-//    countDown()
   }
   
   @objc func keyboardWillDisappear(_ sender: NotificationCenter) {
+    wordTextField.placeholder = "시작하려면 이곳을 눌러주세요"
     uiChangeConstraint?.constant = 0
   }
   
   @objc func setTimer() {
     print("timer")
     counter -= 1
-    if counter <= 60 {
-      contentsLabel.text = "\(counter)"
+    if counter <= 30 {
+      limitCountLabel.text = "\(counter)"
     }
     
     if counter == 0 {
       timer?.invalidate()
       timer = nil
-      counter = 63
-      contentsLabel.text = "60"
-      someTextField.text = ""
+      counter = 33
+      limitCountLabel.text = "30"
+      wordTextField.text = ""
       wordQuestion.isHidden = true
       self.view.endEditing(true)
+      
+      let wordScore = score * 2
+      
+      let alert = UIAlertController(title: "점수", message: "\(wordScore)WPM", preferredStyle: .alert)
+      let okAction = UIAlertAction(title: "확인", style: .default) { (UIAlertAction) in
+        self.score = 0
+      }
+      
+      alert.addAction(okAction)
+    
+      self.limitCountLabel.textColor = .black
+      return present(alert, animated: true)
+    }
+    
+    if counter <= 10 {
+      self.limitCountLabel.textColor = .red
+      tenLimitAnimation()
+    }
+
+    if counter <= 5 {
+      fiveLimitAnimation()
     }
     
   } // end setTimer
@@ -222,12 +245,16 @@ class ENTypingViewController: UIViewController {
     if let button = sender as? UIBarButtonItem {
       switch button.tag {
       case 1:
-        dismiss(animated: true)
+        self.view.window?.rootViewController?.dismiss(animated: false, completion: {
+          let VC = ViewController()
+            VC.modalPresentationStyle = .fullScreen
+            self.present(VC, animated: true)
+        })
       default: print("error")
       }
     }
   }
-
+  
 }
 
 extension ENTypingViewController: UITextFieldDelegate {
@@ -239,7 +266,7 @@ extension ENTypingViewController: UITextFieldDelegate {
   
   func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
     self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.setTimer), userInfo: nil, repeats: true)
-    self.countLabel.isHidden = false
+    self.startCountLabel.isHidden = false
     countDown()
     
     return true
@@ -248,10 +275,11 @@ extension ENTypingViewController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     
     if textField.text == wordQuestion.text {
-      let korWordData = Word.engWord[0...].randomElement()
-      wordQuestion.text = korWordData
+      let engWordData = Word.engWord[0...].randomElement()
+      wordQuestion.text = engWordData
       wordQuestion.textColor = .black
-      someTextField.text = ""
+      wordTextField.text = ""
+      score += 1
     } else if textField.text != wordQuestion.text {
       wordQuestion.textColor = .red
       shakeAnimation()
@@ -263,22 +291,56 @@ extension ENTypingViewController: UITextFieldDelegate {
     UIView.animateKeyframes(withDuration: 0.25, delay: 0, animations: {
       UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.2, animations: {
         self.wordQuestion.center.x -= 8
-        self.someTextField.center.x += 8
+        self.wordTextField.center.x += 8
       })
       UIView.addKeyframe(withRelativeStartTime: 0.2, relativeDuration: 0.3, animations: {
         self.wordQuestion.center.x += 16
-        self.someTextField.center.x -= 16
+        self.wordTextField.center.x -= 16
       })
       UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.3, animations: {
         self.wordQuestion.center.x -= 16
-        self.someTextField.center.x += 16
+        self.wordTextField.center.x += 16
         
       })
       UIView.addKeyframe(withRelativeStartTime: 0.8, relativeDuration: 0.2, animations: {
         self.wordQuestion.center.x += 8
-        self.someTextField.center.x -= 8
+        self.wordTextField.center.x -= 8
       })
     })
+  }
+  
+  private func fiveLimitAnimation() {
+    UIView.animateKeyframes(withDuration: 0.25, delay: 0, animations: {
+      UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.2, animations: {
+        self.limitCountLabel.transform = self.limitCountLabel.transform.scaledBy(x: 3, y: 3)
+      })
+      UIView.addKeyframe(withRelativeStartTime: 0.2, relativeDuration: 0.3, animations: {
+        self.limitCountLabel.transform = .identity
+      })
+      UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.3, animations: {
+        self.limitCountLabel.transform = self.limitCountLabel.transform.scaledBy(x: 5, y: 5)
+      })
+      UIView.addKeyframe(withRelativeStartTime: 0.8, relativeDuration: 0.2, animations: {
+        self.limitCountLabel.transform = .identity
+      })
+    })
+  }
+  
+  private func tenLimitAnimation() {
+  UIView.animateKeyframes(withDuration: 0.25, delay: 0, animations: {
+    UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.2, animations: {
+      self.limitCountLabel.transform = self.limitCountLabel.transform.scaledBy(x: 1, y: 1)
+    })
+    UIView.addKeyframe(withRelativeStartTime: 0.2, relativeDuration: 0.3, animations: {
+      self.limitCountLabel.transform = .identity
+    })
+    UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.3, animations: {
+      self.limitCountLabel.transform = self.limitCountLabel.transform.scaledBy(x: 3, y: 3)
+    })
+    UIView.addKeyframe(withRelativeStartTime: 0.8, relativeDuration: 0.2, animations: {
+      self.limitCountLabel.transform = .identity
+    })
+  })
   }
   
 }

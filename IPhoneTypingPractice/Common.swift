@@ -11,6 +11,7 @@ import UIKit
 struct Common {
   static let contentsFontSize: CGFloat = 20
   static let margin: CGFloat = 20
+  static var toggle = false
   
   // Navigation
   static func navigtationViewController(scene: UIViewController) -> UIViewController {
@@ -23,17 +24,13 @@ struct Common {
       let enTypingViewController = ENTypingViewController()
       let enVC = UINavigationController(rootViewController: enTypingViewController)
       return enVC
-//    case is LaunchViewController:
-//      let launchViewController = LaunchViewController()
-//      let launchVC = UINavigationController(rootViewController: launchViewController)
-//      return launchVC
     default:
       let viewController = ViewController()
       let VC = UINavigationController(rootViewController: viewController)
       return VC
     }
   }
-  // UIView
+  // UIView buildView
   static func defaultView(for uiView: UIView, where addView: UIView) {
     uiView.backgroundColor = .white
     

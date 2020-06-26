@@ -1,4 +1,4 @@
-framework module Pods_IPhoneTypingPractice {
+module Pods_IPhoneTypingPractice {
   umbrella header "Pods-IPhoneTypingPractice-umbrella.h"
 
   export *
