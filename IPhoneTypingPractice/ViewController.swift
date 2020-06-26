@@ -112,7 +112,7 @@ extension ViewController: UICollectionViewDelegate {
       UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
         img.transform = CGAffineTransform(scaleX: 15, y: 15)
       }) { (true) in
-        let vc = Common.navigtationViewController(scene: ENTypingViewController())
+        let vc = Common.navigtationViewController(scene: EMJTypingViewController())
         vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: true)
         img.isHidden = true

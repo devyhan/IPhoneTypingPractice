@@ -24,6 +24,10 @@ struct Common {
       let enTypingViewController = ENTypingViewController()
       let enVC = UINavigationController(rootViewController: enTypingViewController)
       return enVC
+    case is EMJTypingViewController:
+      let emjTypingViewController = EMJTypingViewController()
+      let emjVC = UINavigationController(rootViewController: emjTypingViewController)
+      return emjVC
     default:
       let viewController = ViewController()
       let VC = UINavigationController(rootViewController: viewController)
