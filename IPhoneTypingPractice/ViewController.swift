@@ -10,9 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
   
-  let gameImg = ["flag", "uk", "face"]
-  let gameTitle = ["KOR", "ENG", "EMO"]
-  var okay = false
+  let gameImg = ["flag", "uk", "face", "swift"]
+  let gameTitle = ["KOREAN", "ENGLISH", "EMOJI", "Swift"]
     
   let flowLayout = UICollectionViewFlowLayout()
   lazy var collectionView = UICollectionView(
@@ -24,9 +23,8 @@ class ViewController: UIViewController {
     let vc = LaunchViewController()
     vc.modalPresentationStyle = .fullScreen
     present(vc, animated: false)
-    print(okay)
     
-      navigationController?.setNavigationBarHidden(true, animated: false)
+    navigationController?.setNavigationBarHidden(true, animated: false)
     
     let outView = UIView()
     let gradientLayer = CAGradientLayer()
@@ -35,7 +33,7 @@ class ViewController: UIViewController {
     gradientLayer.locations = [0, 1]
     collectionView.backgroundView = outView
     collectionView.backgroundView?.layer.addSublayer(gradientLayer)
-    collectionView.isScrollEnabled = false
+//    collectionView.isScrollEnabled = false
     Common.toggle = true
     
     setupCollectionView()
@@ -47,18 +45,37 @@ class ViewController: UIViewController {
     collectionView.dataSource = self
     collectionView.delegate = self
     collectionView.register(CustomCell.self, forCellWithReuseIdentifier: CustomCell.identifier)
-     view.addSubview(collectionView)
+    collectionView.register(UICollectionViewCell.self,
+    forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header")
+    view.addSubview(collectionView)
   }
   
   private func setupFlowLayout() {
     let width = view.frame.width - 20
-    let height = view.frame.height / 3 - 35
+    let height = view.frame.height / 3 - 45
     flowLayout.itemSize = CGSize(width: width, height: height)
     flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    
+    flowLayout.headerReferenceSize = CGSize(width: 60, height: 60)
+    
+    flowLayout.sectionHeadersPinToVisibleBounds = false
+    
   }
 }
 
 extension ViewController: UICollectionViewDataSource {
+  func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath)
+    
+    let label = UILabel()
+    label.text = "너의 손놀림을 알아 보자 🥴"
+    label.textAlignment = .center
+    label.font = .boldSystemFont(ofSize: 20)
+    label.frame = header.frame
+    header.addSubview(label)
+    return header
+  }
+  
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return gameImg.count
   }
@@ -89,6 +106,7 @@ extension ViewController: UICollectionViewDelegate {
       view.addSubview(img)
       UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
         img.transform = CGAffineTransform(scaleX: 15, y: 15)
+
       }) { (true) in
         let vc = Common.navigtationViewController(scene: KRTypingViewController())
         vc.modalPresentationStyle = .fullScreen
@@ -113,6 +131,17 @@ extension ViewController: UICollectionViewDelegate {
         img.transform = CGAffineTransform(scaleX: 15, y: 15)
       }) { (true) in
         let vc = Common.navigtationViewController(scene: EMJTypingViewController())
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true)
+        img.isHidden = true
+      }
+    } else if gameImg[indexPath.item] == "swift" {
+      img.image = UIImage(named: "swift")
+      view.addSubview(img)
+      UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
+        img.transform = CGAffineTransform(scaleX: 15, y: 15)
+      }) { (true) in
+        let vc = Common.navigtationViewController(scene: SWFTypingViewController())
         vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: true)
         img.isHidden = true

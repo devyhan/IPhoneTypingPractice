@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0E194CDE24A3854E00E41644 /* ENTypingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E194CDB24A3854E00E41644 /* ENTypingViewController.swift */; };
 		0E39696724A3693F007E1A2A /* 4052-smoothymon-typing.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E39696624A3693E007E1A2A /* 4052-smoothymon-typing.json */; };
+		0E3D87BD24A5BB0E00E0C797 /* SWFTypingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D87BC24A5BB0E00E0C797 /* SWFTypingViewController.swift */; };
 		0EC8B79E24A35DB700BBF344 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8B79D24A35DB700BBF344 /* LaunchViewController.swift */; };
 		0ECDFD8724A0C16300A63399 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECDFD8624A0C16300A63399 /* CustomCell.swift */; };
 		7EF8D30E24A5856C0042BDE7 /* EMJTypingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF8D30D24A5856C0042BDE7 /* EMJTypingViewController.swift */; };
@@ -44,6 +45,7 @@
 		0E194CCD24A36B1600E41644 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		0E194CDB24A3854E00E41644 /* ENTypingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENTypingViewController.swift; sourceTree = "<group>"; };
 		0E39696624A3693E007E1A2A /* 4052-smoothymon-typing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "4052-smoothymon-typing.json"; sourceTree = "<group>"; };
+		0E3D87BC24A5BB0E00E0C797 /* SWFTypingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWFTypingViewController.swift; sourceTree = "<group>"; };
 		0EC8B79D24A35DB700BBF344 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		0ECDFD8624A0C16300A63399 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		635D3BABEDFA6756A8D668C7 /* Pods-IPhoneTypingPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IPhoneTypingPractice.release.xcconfig"; path = "Target Support Files/Pods-IPhoneTypingPractice/Pods-IPhoneTypingPractice.release.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				7EFC6B6124A0C0740079F272 /* KRTypingViewController.swift */,
 				0E194CDB24A3854E00E41644 /* ENTypingViewController.swift */,
 				7EF8D30D24A5856C0042BDE7 /* EMJTypingViewController.swift */,
+				0E3D87BC24A5BB0E00E0C797 /* SWFTypingViewController.swift */,
 				0ECDFD8624A0C16300A63399 /* CustomCell.swift */,
 				7EFC6B5124A0989A0079F272 /* Main.storyboard */,
 				7EFC6B5424A0989B0079F272 /* Assets.xcassets */,
@@ -263,6 +266,7 @@
 			files = (
 				7EFC6B6024A09AC90079F272 /* Common.swift in Sources */,
 				7EFC6B6424A1B1D80079F272 /* Data.swift in Sources */,
+				0E3D87BD24A5BB0E00E0C797 /* SWFTypingViewController.swift in Sources */,
 				7EFC6B5024A0989A0079F272 /* ViewController.swift in Sources */,
 				0E194CDE24A3854E00E41644 /* ENTypingViewController.swift in Sources */,
 				7EF8D30E24A5856C0042BDE7 /* EMJTypingViewController.swift in Sources */,
@@ -415,14 +419,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X6LA4P7TFP;
+				DEVELOPMENT_TEAM = Q3HC733CNK;
 				INFOPLIST_FILE = IPhoneTypingPractice/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.devyhan93;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shooooting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -435,14 +439,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X6LA4P7TFP;
+				DEVELOPMENT_TEAM = Q3HC733CNK;
 				INFOPLIST_FILE = IPhoneTypingPractice/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.devyhan93;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shooooting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

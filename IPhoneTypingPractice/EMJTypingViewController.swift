@@ -43,6 +43,8 @@ class EMJTypingViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupUI()
+    navigationController?.navigationBar.tintColor = .black
+
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -152,6 +154,9 @@ class EMJTypingViewController: UIViewController {
       textAlignment: .center,
       where: contentsWrapView
     )
+    
+    wordQuestion.adjustsFontSizeToFitWidth = true
+
     // Layout
     wordQuestion.autoLayout
       .centerY()
@@ -198,6 +203,7 @@ class EMJTypingViewController: UIViewController {
   
   @objc func keyboardWillDisappear(_ sender: NotificationCenter) {
     wordTextField.placeholder = "시작하려면 이곳을 눌러주세요"
+    wordQuestion.textColor = .black
     uiChangeConstraint?.constant = 0
   }
   

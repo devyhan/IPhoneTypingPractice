@@ -9,6 +9,7 @@
 import UIKit
 
 class KRTypingViewController: UIViewController {
+  
   private let contentsWrapView = UIView()
   private let wordTextField = UITextField()
   private let startCountLabel = UILabel()
@@ -43,6 +44,7 @@ class KRTypingViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupUI()
+    navigationController?.navigationBar.tintColor = .black
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -152,6 +154,9 @@ class KRTypingViewController: UIViewController {
       textAlignment: .center,
       where: contentsWrapView
     )
+    
+    wordQuestion.adjustsFontSizeToFitWidth = true
+
     // Layout
     wordQuestion.autoLayout
       .centerY()
@@ -198,6 +203,7 @@ class KRTypingViewController: UIViewController {
   
   @objc func keyboardWillDisappear(_ sender: NotificationCenter) {
     wordTextField.placeholder = "시작하려면 이곳을 눌러주세요"
+    wordQuestion.textColor = .black
     uiChangeConstraint?.constant = 0
   }
   
@@ -268,7 +274,6 @@ extension KRTypingViewController: UITextFieldDelegate {
     self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.setTimer), userInfo: nil, repeats: true)
     self.startCountLabel.isHidden = false
     countDown()
-    
     return true
   }
   
