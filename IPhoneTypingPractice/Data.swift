@@ -2031,9 +2031,24 @@ struct Word {
     "Swift",
     "OOP",
     "iPad",
-    "Supreme"
+    "Git",
+    "GitHub",
+    "AppStore",
+    "Keynote",
+    "iTunes",
+    "AppleStore",
+    "AppleWatch",
+    "watchOS",
+    "AppleCard",
+    "MacBook",
+    "MacPro",
+    "iMacPro",
+    "ProDisplayXDR",
+    "Macmini",
+    "ApplePencil",
+    "AppleTV",
+    "HomePod",
+    "Beats"
   ]
-
-  
 }
 
