@@ -169,7 +169,6 @@ class ENTypingViewController: UIViewController {
     
     setKeyboardEvent()
     wordTextField.delegate = self
-    
   }
   
   func countDown() {

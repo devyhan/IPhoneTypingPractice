@@ -101,69 +101,59 @@ extension ViewController: UICollectionViewDelegate {
     let img = UIImageView()
     img.frame = CGRect(x: 0, y: 0, width: width, height: width)
     img.center = view.center
+    
     if gameImg[indexPath.item] == "flag" {
+      
+      let VC = Common.navigtationViewController(scene: KRTypingViewController())
       img.image = UIImage(named: "flag")
       view.addSubview(img)
-      UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
-        img.transform = CGAffineTransform(scaleX: 15, y: 15)
-
-      }) { (true) in
-        let vc = Common.navigtationViewController(scene: KRTypingViewController())
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true)
-        img.isHidden = true
-      }
+      Common.willSpreadFlagImage(
+        ViewController: VC,
+        imageView: img
+      )
+      VC.modalPresentationStyle = .fullScreen
+      VC.modalTransitionStyle = .crossDissolve
+      present(VC, animated: true)
+      
     } else if gameImg[indexPath.item] == "uk" {
+      
+      let VC = Common.navigtationViewController(scene: ENTypingViewController())
       img.image = UIImage(named: "uk")
       view.addSubview(img)
-      UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
-        img.transform = CGAffineTransform(scaleX: 15, y: 15)
-      }) { (true) in
-        let vc = Common.navigtationViewController(scene: ENTypingViewController())
-        vc.modalPresentationStyle = .overFullScreen
-        self.present(vc, animated: true)
-        img.isHidden = true
-      }
+      Common.willSpreadFlagImage(
+        ViewController: VC,
+        imageView: img
+      )
+      VC.modalPresentationStyle = .fullScreen
+      VC.modalTransitionStyle = .crossDissolve
+      present(VC, animated: true)
+      
     } else if gameImg[indexPath.item] == "face" {
+      
+      let VC = Common.navigtationViewController(scene: EMJTypingViewController())
       img.image = UIImage(named: "face")
       view.addSubview(img)
-      UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
-        img.transform = CGAffineTransform(scaleX: 15, y: 15)
-      }) { (true) in
-        let vc = Common.navigtationViewController(scene: EMJTypingViewController())
-        vc.modalPresentationStyle = .overFullScreen
-        self.present(vc, animated: true)
-        img.isHidden = true
-      }
+      Common.willSpreadFlagImage(
+        ViewController: VC,
+        imageView: img
+      )
+      VC.modalPresentationStyle = .fullScreen
+      VC.modalTransitionStyle = .crossDissolve
+      present(VC, animated: true)
+      
     } else if gameImg[indexPath.item] == "swift" {
+      
+      let VC = Common.navigtationViewController(scene: SWFTypingViewController())
       img.image = UIImage(named: "swift")
       view.addSubview(img)
-      UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
-        img.transform = CGAffineTransform(scaleX: 15, y: 15)
-      }) { (true) in
-        let vc = Common.navigtationViewController(scene: SWFTypingViewController())
-        vc.modalPresentationStyle = .overFullScreen
-        self.present(vc, animated: true)
-        img.isHidden = true
-      }
+      Common.willSpreadFlagImage(
+        ViewController: VC,
+        imageView: img
+      )
+      VC.modalPresentationStyle = .fullScreen
+      VC.modalTransitionStyle = .crossDissolve
+      present(VC, animated: true)
+      
     }
   }
-}
-
-extension UIColor {
-   convenience init(red: Int, green: Int, blue: Int) {
-       assert(red >= 0 && red <= 255, "Invalid red component")
-       assert(green >= 0 && green <= 255, "Invalid green component")
-       assert(blue >= 0 && blue <= 255, "Invalid blue component")
-
-       self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
-   }
-
-   convenience init(rgb: Int) {
-       self.init(
-           red: (rgb >> 16) & 0xFF,
-           green: (rgb >> 8) & 0xFF,
-           blue: rgb & 0xFF
-       )
-   }
 }

@@ -49,7 +49,7 @@ struct Common {
     uiLable.text = title ?? ""
     uiLable.textAlignment = textAlignment ?? .center
     uiLable.font = UIFont.boldSystemFont(ofSize: contentsFontSize * 10)
-
+    
     uiView.addSubview(uiLable)
   }
   // UILabel
@@ -57,7 +57,7 @@ struct Common {
     uiLable.text = title ?? ""
     uiLable.textAlignment = textAlignment ?? .center
     uiLable.font = UIFont.boldSystemFont(ofSize: contentsFontSize * fontMultiplier)
-  
+    
     uiView.addSubview(uiLable)
   }
   // UITextField
@@ -68,11 +68,22 @@ struct Common {
     uiTextField.font = UIFont.boldSystemFont(ofSize: contentsFontSize)
     uiTextField.textColor = .black
     uiTextField.autocapitalizationType = .none
-
+    
     uiView.addSubview(uiTextField)
   }
-
+  // Animation
+  static func willSpreadFlagImage(ViewController VC: UIViewController, imageView IV: UIImageView) {
+    UIView.animate(
+      withDuration: 0.7,
+      delay: 0,
+      animations: {IV.transform = CGAffineTransform(scaleX: 15, y: 15)}
+    ) { (true) in
+      IV.isHidden = true
+    }
+  }
 }
+
+// MARK: - Extension
 
 extension UIView {
   var autoLayout: UIView {
@@ -114,5 +125,23 @@ extension UIView {
     let anchor = anchor ?? superview!.safeAreaLayoutGuide.centerXAnchor
     centerXAnchor.constraint(equalTo: anchor, constant: c).isActive = true
     return self
+  }
+}
+
+extension UIColor {
+  convenience init(red: Int, green: Int, blue: Int) {
+    assert(red >= 0 && red <= 255, "Invalid red component")
+    assert(green >= 0 && green <= 255, "Invalid green component")
+    assert(blue >= 0 && blue <= 255, "Invalid blue component")
+    
+    self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
+  }
+  
+  convenience init(rgb: Int) {
+    self.init(
+      red: (rgb >> 16) & 0xFF,
+      green: (rgb >> 8) & 0xFF,
+      blue: rgb & 0xFF
+    )
   }
 }
