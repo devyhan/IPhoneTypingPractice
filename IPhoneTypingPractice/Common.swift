@@ -28,6 +28,10 @@ struct Common {
       let emjTypingViewController = EMJTypingViewController()
       let emjVC = UINavigationController(rootViewController: emjTypingViewController)
       return emjVC
+    case is SWFTypingViewController:
+      let swfTypingViewController = SWFTypingViewController()
+      let swfVC = UINavigationController(rootViewController: swfTypingViewController)
+      return swfVC
     default:
       let viewController = ViewController()
       let VC = UINavigationController(rootViewController: viewController)

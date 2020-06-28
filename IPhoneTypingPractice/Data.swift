@@ -2075,9 +2075,49 @@ struct Word {
     "Swift",
     "OOP",
     "iPad",
-    "Supreme"
+    "Git",
+    "GitHub",
+    "AppStore",
+    "Keynote",
+    "iTunes",
+    "AppleStore",
+    "AppleWatch",
+    "watchOS",
+    "AppleCard",
+    "MacBook",
+    "MacPro",
+    "iMacPro",
+    "ProDisplayXDR",
+    "Macmini",
+    "ApplePencil",
+    "AppleTV",
+    "HomePod",
+    "Beats"
   ]
-
   
+  static let swiftword = [
+    "var",
+    "let",
+    "func",
+    "UICollectionView",
+    "UITableView",
+    "UICollectionViewDelegate",
+    "UICollectionViewDataSource",
+    "NavigationController",
+    "safeAreaLayoutGuide",
+    "rootViewController",
+    "constraint",
+    "discardableResult",
+    "Swift",
+    "modalPresentationStyle",
+    "viewDidDisappear",
+    "transitionCrossDissolve",
+    "DispatchQueue",
+    "NotificationCenter",
+    "UIAlertController",
+    "KRTypingViewController",
+    "makeKeyAndVisible",
+    "setNavigationBarHidden"
+  ]
 }
 
