@@ -238,11 +238,11 @@ class EMJTypingViewController: UIViewController {
     
     if counter <= 10 {
       self.limitCountLabel.textColor = .red
-      tenLimitAnimation()
+      Common.hartBeatAnimation(targetLabel: limitCountLabel)
     }
 
     if counter <= 5 {
-      fiveLimitAnimation()
+      Common.twiceHartBeatAnimation(targetLabel: limitCountLabel)
     }
     
   } // end setTimer
@@ -288,65 +288,9 @@ extension EMJTypingViewController: UITextFieldDelegate {
       score += 1
     } else if textField.text != wordQuestion.text {
       wordQuestion.textColor = .red
-      shakeAnimation()
+      Common.shakeAnimagtion(targetLabel: wordQuestion, reverseTargetLabel: wordTextField)
     }
     return true
-  }
-  
-  private func shakeAnimation() {
-    UIView.animateKeyframes(withDuration: 0.25, delay: 0, animations: {
-      UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.2, animations: {
-        self.wordQuestion.center.x -= 8
-        self.wordTextField.center.x += 8
-      })
-      UIView.addKeyframe(withRelativeStartTime: 0.2, relativeDuration: 0.3, animations: {
-        self.wordQuestion.center.x += 16
-        self.wordTextField.center.x -= 16
-      })
-      UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.3, animations: {
-        self.wordQuestion.center.x -= 16
-        self.wordTextField.center.x += 16
-        
-      })
-      UIView.addKeyframe(withRelativeStartTime: 0.8, relativeDuration: 0.2, animations: {
-        self.wordQuestion.center.x += 8
-        self.wordTextField.center.x -= 8
-      })
-    })
-  }
-  
-  private func fiveLimitAnimation() {
-    UIView.animateKeyframes(withDuration: 0.25, delay: 0, animations: {
-      UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.2, animations: {
-        self.limitCountLabel.transform = self.limitCountLabel.transform.scaledBy(x: 3, y: 3)
-      })
-      UIView.addKeyframe(withRelativeStartTime: 0.2, relativeDuration: 0.3, animations: {
-        self.limitCountLabel.transform = .identity
-      })
-      UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.3, animations: {
-        self.limitCountLabel.transform = self.limitCountLabel.transform.scaledBy(x: 5, y: 5)
-      })
-      UIView.addKeyframe(withRelativeStartTime: 0.8, relativeDuration: 0.2, animations: {
-        self.limitCountLabel.transform = .identity
-      })
-    })
-  }
-  
-  private func tenLimitAnimation() {
-  UIView.animateKeyframes(withDuration: 0.25, delay: 0, animations: {
-    UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.2, animations: {
-      self.limitCountLabel.transform = self.limitCountLabel.transform.scaledBy(x: 1, y: 1)
-    })
-    UIView.addKeyframe(withRelativeStartTime: 0.2, relativeDuration: 0.3, animations: {
-      self.limitCountLabel.transform = .identity
-    })
-    UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.3, animations: {
-      self.limitCountLabel.transform = self.limitCountLabel.transform.scaledBy(x: 3, y: 3)
-    })
-    UIView.addKeyframe(withRelativeStartTime: 0.8, relativeDuration: 0.2, animations: {
-      self.limitCountLabel.transform = .identity
-    })
-  })
   }
   
 }

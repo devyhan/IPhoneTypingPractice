@@ -72,7 +72,7 @@ struct Common {
     uiView.addSubview(uiTextField)
   }
   // Animation
-  static func willSpreadFlagImage(ViewController VC: UIViewController, imageView IV: UIImageView) {
+  static func spreadFlagImage(ViewController VC: UIViewController, imageView IV: UIImageView) {
     UIView.animate(
       withDuration: 0.7,
       delay: 0,
@@ -80,6 +80,59 @@ struct Common {
     ) { (true) in
       IV.isHidden = true
     }
+  }
+  static func shakeAnimagtion(targetLabel tL: UILabel, reverseTargetLabel rTL: UITextField) {
+    UIView.animateKeyframes(withDuration: 0.25, delay: 0, animations: {
+      UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.2, animations: {
+        tL.center.x -= 8
+        rTL.center.x += 8
+      })
+      UIView.addKeyframe(withRelativeStartTime: 0.2, relativeDuration: 0.3, animations: {
+        tL.center.x += 16
+        rTL.center.x -= 16
+      })
+      UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.3, animations: {
+        tL.center.x -= 16
+        rTL.center.x += 16
+        
+      })
+      UIView.addKeyframe(withRelativeStartTime: 0.8, relativeDuration: 0.2, animations: {
+        tL.center.x += 8
+        rTL.center.x -= 8
+      })
+    })
+  }
+  static func twiceHartBeatAnimation(targetLabel label: UILabel) {
+    UIView.animateKeyframes(withDuration: 0.25, delay: 0, animations: {
+      UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.2, animations: {
+        label.transform = label.transform.scaledBy(x: 3, y: 3)
+      })
+      UIView.addKeyframe(withRelativeStartTime: 0.2, relativeDuration: 0.3, animations: {
+        label.transform = .identity
+      })
+      UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.3, animations: {
+        label.transform = label.transform.scaledBy(x: 5, y: 5)
+      })
+      UIView.addKeyframe(withRelativeStartTime: 0.8, relativeDuration: 0.2, animations: {
+        label.transform = .identity
+      })
+    })
+  }
+  static func hartBeatAnimation(targetLabel label: UILabel) {
+    UIView.animateKeyframes(withDuration: 0.25, delay: 0, animations: {
+      UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.2, animations: {
+        label.transform = label.transform.scaledBy(x: 1, y: 1)
+      })
+      UIView.addKeyframe(withRelativeStartTime: 0.2, relativeDuration: 0.3, animations: {
+        label.transform = .identity
+      })
+      UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.3, animations: {
+        label.transform = label.transform.scaledBy(x: 3, y: 3)
+      })
+      UIView.addKeyframe(withRelativeStartTime: 0.8, relativeDuration: 0.2, animations: {
+        label.transform = .identity
+      })
+    })
   }
 }
 

@@ -107,7 +107,7 @@ extension ViewController: UICollectionViewDelegate {
       let VC = Common.navigtationViewController(scene: KRTypingViewController())
       img.image = UIImage(named: "flag")
       view.addSubview(img)
-      Common.willSpreadFlagImage(
+      Common.spreadFlagImage(
         ViewController: VC,
         imageView: img
       )
@@ -120,7 +120,7 @@ extension ViewController: UICollectionViewDelegate {
       let VC = Common.navigtationViewController(scene: ENTypingViewController())
       img.image = UIImage(named: "uk")
       view.addSubview(img)
-      Common.willSpreadFlagImage(
+      Common.spreadFlagImage(
         ViewController: VC,
         imageView: img
       )
@@ -133,7 +133,7 @@ extension ViewController: UICollectionViewDelegate {
       let VC = Common.navigtationViewController(scene: EMJTypingViewController())
       img.image = UIImage(named: "face")
       view.addSubview(img)
-      Common.willSpreadFlagImage(
+      Common.spreadFlagImage(
         ViewController: VC,
         imageView: img
       )
@@ -146,7 +146,7 @@ extension ViewController: UICollectionViewDelegate {
       let VC = Common.navigtationViewController(scene: SWFTypingViewController())
       img.image = UIImage(named: "swift")
       view.addSubview(img)
-      Common.willSpreadFlagImage(
+      Common.spreadFlagImage(
         ViewController: VC,
         imageView: img
       )
