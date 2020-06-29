@@ -71,6 +71,14 @@ struct Common {
     
     uiView.addSubview(uiTextField)
   }
+  // UIImage
+  static func buildImageView(for uiImageView: UIImageView, width: CGFloat, imageNmae: String, where uiView: UIView) {
+    uiImageView.image = UIImage(named: imageNmae)
+    uiImageView.frame = CGRect(x: 0, y: 0, width: width, height: width)
+    uiImageView.center = uiView.center
+    
+    uiView.addSubview(uiImageView)
+  }
   // Animation
   static func spreadFlagImage(ViewController VC: UIViewController, imageView IV: UIImageView) {
     UIView.animate(

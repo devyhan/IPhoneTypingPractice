@@ -94,6 +94,18 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7E6E2FE724A983010026FE0E /* SubViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7EFC6B6124A0C0740079F272 /* KRTypingViewController.swift */,
+				0E194CDB24A3854E00E41644 /* ENTypingViewController.swift */,
+				7EF8D30D24A5856C0042BDE7 /* EMJTypingViewController.swift */,
+				0E3D87BC24A5BB0E00E0C797 /* SWFTypingViewController.swift */,
+			);
+			name = SubViewController;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		7EFC6B3F24A098990079F272 = {
 			isa = PBXGroup;
 			children = (
@@ -115,16 +127,13 @@
 		7EFC6B4A24A0989A0079F272 /* IPhoneTypingPractice */ = {
 			isa = PBXGroup;
 			children = (
+				7E6E2FE724A983010026FE0E /* SubViewController */,
 				0E39696624A3693E007E1A2A /* 4052-smoothymon-typing.json */,
 				7EFC6B6324A1B1D80079F272 /* Data.swift */,
 				0EC8B79D24A35DB700BBF344 /* LaunchViewController.swift */,
 				7EFC6B4B24A0989A0079F272 /* AppDelegate.swift */,
 				7EFC6B5F24A09AC90079F272 /* Common.swift */,
 				7EFC6B4F24A0989A0079F272 /* ViewController.swift */,
-				7EFC6B6124A0C0740079F272 /* KRTypingViewController.swift */,
-				0E194CDB24A3854E00E41644 /* ENTypingViewController.swift */,
-				7EF8D30D24A5856C0042BDE7 /* EMJTypingViewController.swift */,
-				0E3D87BC24A5BB0E00E0C797 /* SWFTypingViewController.swift */,
 				0ECDFD8624A0C16300A63399 /* CustomCell.swift */,
 				7EFC6B5124A0989A0079F272 /* Main.storyboard */,
 				7EFC6B5424A0989B0079F272 /* Assets.xcassets */,

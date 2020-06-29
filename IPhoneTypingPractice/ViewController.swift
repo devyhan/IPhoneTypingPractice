@@ -12,7 +12,8 @@ class ViewController: UIViewController {
   
   let gameImg = ["flag", "uk", "face", "swift"]
   let gameTitle = ["KOREAN", "ENGLISH", "EMOJI", "Swift"]
-    
+  private let flagImageView = UIImageView()
+  
   let flowLayout = UICollectionViewFlowLayout()
   lazy var collectionView = UICollectionView(
     frame: view.frame, collectionViewLayout: flowLayout
@@ -33,7 +34,7 @@ class ViewController: UIViewController {
     gradientLayer.locations = [0, 1]
     collectionView.backgroundView = outView
     collectionView.backgroundView?.layer.addSublayer(gradientLayer)
-//    collectionView.isScrollEnabled = false
+    //    collectionView.isScrollEnabled = false
     Common.toggle = true
     
     setupCollectionView()
@@ -46,7 +47,7 @@ class ViewController: UIViewController {
     collectionView.delegate = self
     collectionView.register(CustomCell.self, forCellWithReuseIdentifier: CustomCell.identifier)
     collectionView.register(UICollectionViewCell.self,
-    forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header")
+                            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header")
     view.addSubview(collectionView)
   }
   
@@ -90,7 +91,7 @@ extension ViewController: UICollectionViewDataSource {
     cell.layer.shadowOffset = CGSize(width: 1, height: 1)
     cell.layer.shadowOpacity = 0.5
     cell.layer.shadowRadius = 5
-
+    
     return cell
   }
 }
@@ -98,62 +99,66 @@ extension ViewController: UICollectionViewDataSource {
 extension ViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     let width = view.frame.width / 2
-    let img = UIImageView()
-    img.frame = CGRect(x: 0, y: 0, width: width, height: width)
-    img.center = view.center
     
     if gameImg[indexPath.item] == "flag" {
-      
       let VC = Common.navigtationViewController(scene: KRTypingViewController())
-      img.image = UIImage(named: "flag")
-      view.addSubview(img)
+      Common.buildImageView(
+        for: flagImageView,
+        width: width,
+        imageNmae: "flag",
+        where: view
+      )
       Common.spreadFlagImage(
         ViewController: VC,
-        imageView: img
+        imageView: flagImageView
       )
       VC.modalPresentationStyle = .fullScreen
       VC.modalTransitionStyle = .crossDissolve
       present(VC, animated: true)
-      
     } else if gameImg[indexPath.item] == "uk" {
-      
       let VC = Common.navigtationViewController(scene: ENTypingViewController())
-      img.image = UIImage(named: "uk")
-      view.addSubview(img)
+      Common.buildImageView(
+        for: flagImageView,
+        width: width,
+        imageNmae: "uk",
+        where: view
+      )
       Common.spreadFlagImage(
         ViewController: VC,
-        imageView: img
+        imageView: flagImageView
       )
       VC.modalPresentationStyle = .fullScreen
       VC.modalTransitionStyle = .crossDissolve
       present(VC, animated: true)
-      
     } else if gameImg[indexPath.item] == "face" {
-      
       let VC = Common.navigtationViewController(scene: EMJTypingViewController())
-      img.image = UIImage(named: "face")
-      view.addSubview(img)
+      Common.buildImageView(
+        for: flagImageView,
+        width: width,
+        imageNmae: "face",
+        where: view
+      )
       Common.spreadFlagImage(
         ViewController: VC,
-        imageView: img
+        imageView: flagImageView
       )
       VC.modalPresentationStyle = .fullScreen
       VC.modalTransitionStyle = .crossDissolve
       present(VC, animated: true)
-      
     } else if gameImg[indexPath.item] == "swift" {
-      
       let VC = Common.navigtationViewController(scene: SWFTypingViewController())
-      img.image = UIImage(named: "swift")
-      view.addSubview(img)
+      Common.buildImageView(
+        for: flagImageView,
+        width: width,
+        imageNmae: "swift",
+        where: view)
       Common.spreadFlagImage(
         ViewController: VC,
-        imageView: img
+        imageView: flagImageView
       )
       VC.modalPresentationStyle = .fullScreen
       VC.modalTransitionStyle = .crossDissolve
       present(VC, animated: true)
-      
     }
   }
 }

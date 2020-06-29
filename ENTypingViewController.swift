@@ -73,7 +73,6 @@ class ENTypingViewController: UIViewController {
     navigationController?.navigationBar.barTintColor = .white
     navigationController?.navigationBar.shadowImage = UIImage()
     
-    
     // Attribute
     Common.defaultView(
       for: contentsWrapView,
@@ -155,9 +154,7 @@ class ENTypingViewController: UIViewController {
       textAlignment: .center,
       where: contentsWrapView
     )
-    
     wordQuestion.adjustsFontSizeToFitWidth = true
-
     // Layout
     wordQuestion.autoLayout
       .centerY()
